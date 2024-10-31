@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Printer</title>
+</head>
+<body>
+    <div>
+        <h2>Your Ticket</h2>
+        <button onclick="openPrintWindow()">Print Ticket</button>
+    </div>
+
+    <script>
+        function openPrintWindow() {
+            var printWindow = window.open('printTicket.html', '_blank', 'width=800,height=600');
+            printWindow.focus();
+        }
+    </script>
+</body>
+</html> 
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       /* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2f154b; /* Background color matching the purple shade */
+    background-color: rgba(#dff7ff);
+}
+
+/* Main container for the login section */
+.login-container {
+    display: flex;
+    width: 70%;
+    height: 60vh;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #2f154b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Left section */
+.left-section {
+    flex: 1;
+    background-color: #2f154b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.left-section .logo {
+    width: 100px; /* Adjust logo size */
+    margin-bottom: 20px;
+}
+
+.left-section h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.left-section p {
+    font-size: 1.2em;
+}
+
+/* Right section */
+.right-section {
+    flex: 1;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #2f154b;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    outline: none;
+    text-align: center;
+}
+
+.input-group input:focus {
+    border-color: #2f154b;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    color: #2f154b;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-btn {
+    background-color: #2f154b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-btn {
+    background-color: #d2232a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #43216e;
+}
+
+.signup-btn:hover {
+    background-color: #9c1a1e;
+}
+
+/* Responsive layout for smaller screens (mobile) */
+@media (max-width: 768px) {
+    /* Change the layout to stack vertically */
+    .login-container {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
+
+    .left-section {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .right-section {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 20px;
+    }
+
+    .login-box {
+        width: 100%;
+    }
+
+    /* Adjust font sizes for mobile */
+    .left-section h1 {
+        font-size: 1.5em;
+    }
+
+    .left-section p {
+        font-size: 1em;
+    }
+
+    .login-box h2 {
+        font-size: 1.5em;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button-group button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Left Section (Logo and Text) -->
+        <div class="left-section">
+            <img src="logo.png" alt="Hash Tech Logo" class="logo">
+            <h1>Hash Tech</h1>
+            <p>Powered By C# UI Academy</p>
+        </div>
+        
+        <!-- Right Section (Login Form) -->
+        <div class="right-section">
+            <div class="login-box">
+                <h2>Login</h2>
+                <form action="#">
+                    <div class="input-group">
+                        <input type="text" placeholder="User Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="login-btn">Login</button>
+                        <button type="button" class="signup-btn">Signup</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
